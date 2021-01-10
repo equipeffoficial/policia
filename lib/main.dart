@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Hulla',
+      title: 'Policia',
       theme: ThemeData(
         primaryColor: Color.fromARGB(255, 0, 0, 180),
         scaffoldBackgroundColor: Colors.white,
