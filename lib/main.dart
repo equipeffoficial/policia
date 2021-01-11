@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Policia',
       theme: ThemeData(
         primaryColor: Color.fromARGB(255, 0, 0, 180),
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       onGenerateRoute: (settings) {

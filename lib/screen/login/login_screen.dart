@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -10,12 +11,14 @@ class LoginScreen extends StatelessWidget {
         ),
         body: Center(
           child: Card(
-            margin: const EdgeInsets.symmetric(horizontal: 16),
+            margin: const EdgeInsets.symmetric(horizontal: 12),
+
             child: Form(
               child: ListView(
                 padding: const EdgeInsets.all(16),
                 shrinkWrap: true,
                 children: [
+                  Image.asset('images/login.jpg', height: 250,),
                   TextFormField(
                     decoration: const InputDecoration(hintText: "E-mail"),
                     keyboardType: TextInputType.emailAddress,
@@ -34,9 +37,18 @@ class LoginScreen extends StatelessWidget {
                     },
                   ),
                   const SizedBox(height: 16),
-                  RaisedButton(
-                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    onPressed: () {},
+                  ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    child: RaisedButton(
+                      textColor: Colors.white,
+                      color: Theme.of(context).primaryColor,
+                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      child: Text(
+                        "Entrar",
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      onPressed: () {},
+                    ),
                   ),
                 ],
               ),
