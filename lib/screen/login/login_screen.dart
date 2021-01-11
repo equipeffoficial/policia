@@ -2,6 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
+
+  final TextEditingController emailController = TextEditingController();
+
+  final TextEditingController passController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +25,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   Image.asset('images/login.jpg', height: 250,),
                   TextFormField(
+                    controller: emailController,
                     decoration: const InputDecoration(hintText: "E-mail"),
                     keyboardType: TextInputType.emailAddress,
                     autocorrect: false,
@@ -27,6 +33,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   TextFormField(
+                    controller:  passController,
                     decoration: const InputDecoration(hintText: "Senha"),
                     autocorrect: false,
                     obscureText: true,
