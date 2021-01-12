@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:policia/models/user/user.dart';
+import 'package:policia/models/user/user_manager.dart';
 
 class LoginScreen extends StatelessWidget {
 
@@ -7,9 +9,14 @@ class LoginScreen extends StatelessWidget {
 
   final TextEditingController passController = TextEditingController();
 
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        key: scaffoldKey,
         appBar: AppBar(
           title: const Text("Entrar"),
           centerTitle: true,
@@ -19,6 +26,7 @@ class LoginScreen extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 12),
 
             child: Form(
+              key: formKey,
               child: ListView(
                 padding: const EdgeInsets.all(16),
                 shrinkWrap: true,
@@ -54,7 +62,10 @@ class LoginScreen extends StatelessWidget {
                         "Entrar",
                         style: TextStyle(fontSize: 18),
                       ),
-                      onPressed: () {},
+                      onPressed: userManager.signIn(
+                          user: User(
+                              email: emailController.text,
+                              password: passController.text),
                     ),
                   ),
                 ],
